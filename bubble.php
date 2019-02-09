@@ -1,11 +1,11 @@
 <?php
 
-    function bubble_sort($arr)
+    function bubbleSort($arr)
     {
-        $size = count($arr)-1;
-        for ($i=0; $i<$size; $i++)
+        $n = count($arr)-1;
+        for ($i=0; $i<$n; $i++)
         {
-            for ($j=0; $j<$size-$i; $j++)
+            for ($j=0; $j<$n-$i; $j++)
             {
                 $k = $j+1;
                 if ($arr[$k] < $arr[$j])
@@ -17,4 +17,4 @@
         return $arr;
     }
     $arr = [5, 1, 43, 4, 6, 15, -1, 0];
-    echo implode(bubble_sort($arr), ' ');
+    echo implode(bubbleSort($arr), ' ');
