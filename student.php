@@ -13,17 +13,17 @@
             $this->firstname = $FirstName;
             $this->lastname = $LastName;
             if ($Gender !== 'male' && $Gender !== 'female') {
-                exit(''.PHP_EOL);
+                exit('Gender must be male or female'.PHP_EOL);
             } else {
                 $this->gender = $Gender;
             }
             if (!in_array($Status, Student::STATUS)) {
-                exit(''.PHP_EOL);
+                exit('it can be only freshman or sophomore or junior or senior'.PHP_EOL);
             } else {
                 $this->status = $Status;
             }
             if (!is_numeric($Gpa) || $Gpa < 0 || $Gpa > 4) {
-                exit(''.PHP_EOL);
+                exit('It can`t be more then 4 or less then 0'.PHP_EOL);
             } else {
                 $this->gpa = $Gpa;
             }
