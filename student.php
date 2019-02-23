@@ -2,28 +2,28 @@
 
     class Student
     {
-        public const STATUS = ['freshman', 'sophomore', 'junior', 'senior'];
-        public $firstname;
-        public $lastname;
-        public $gender;
-        public $status;
-        public $gpa;
+        private const STATUS = ['freshman', 'sophomore', 'junior', 'senior'];
+        private $firstname;
+        private $lastname;
+        private $gender;
+        private $status;
+        private $gpa;
 
         public function __construct($FirstName, $LastName, $Gender, $Status, $Gpa) {
             $this->firstname = $FirstName;
             $this->lastname = $LastName;
             if ($Gender !== 'male' && $Gender !== 'female') {
-                exit('Gender must be male or female'.PHP_EOL);
+                exit(''.PHP_EOL);
             } else {
                 $this->gender = $Gender;
             }
             if (!in_array($Status, Student::STATUS)) {
-                exit('it can be only freshman or sophomore or junior or senior'.PHP_EOL);
+                exit(''.PHP_EOL);
             } else {
                 $this->status = $Status;
             }
             if (!is_numeric($Gpa) || $Gpa < 0 || $Gpa > 4) {
-                exit('It can`t be more then 4 or less then 0'.PHP_EOL);
+                exit(''.PHP_EOL);
             } else {
                 $this->gpa = $Gpa;
             }
@@ -78,5 +78,8 @@
     }
     showInfo($student);
 
-
-
+    $study_time = [60, 100, 40, 300, 1000];
+    for ($i=0; $i < count($student); $i++) {
+        $student[$i]->studyTime($study_time[$i]);
+    }
+    showInfo($student[0]);
