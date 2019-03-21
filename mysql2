@@ -1,0 +1,4 @@
+INSERT INTO products_descriptions 
+SET product_id = 220, newid = 1, lang = 'rus', name = 'Iphone 7' ,description = 'Amazing phone' 
+ON DUPLICATE KEY UPDATE 
+lang = 'eng', name = 'new Iphone2233';
